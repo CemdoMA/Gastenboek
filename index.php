@@ -22,6 +22,7 @@
 		    </fieldset>
 <!--              <div class="links">-->
               <strong><h4>Ga <a href="comments.php">hier</a> naar de comments!</h4></strong>
+              <button onclick="alert('asshole,bitch,fuck,motherfucker,redneck,shit,piece of shit,shithead,cunt,suck,Jew,Nazi,Hitler,loser,cancer')">Lijst van verboden woorden</button>
 <!--              </div>-->
 		  </form>
 		</div>
@@ -39,7 +40,7 @@ if(isset($_POST['submit'])){
         $message_user = strip_tags($_POST['user_message']);
 
         function noBadWordsAllowed($data){
-            $badwords = array("asshole","bitch","fuck","motherfucker","redneck","shit","piece of shit","shithead","cunt","suck");
+            $badwords = array("asshole","bitch","fuck","motherfucker","redneck","shit","piece of shit","shithead","cunt","suck","Jew","Nazi","Hitler","loser","cancer");
             $replacement_words = array("Bobba","Bobba","Bobba","Bobba","Bobba","Bobba","Bobba","Bobba","Bobba","Bobba");
             $data = str_ireplace($badwords,$replacement_words,$data);
 
