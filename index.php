@@ -37,16 +37,11 @@ $dbc = mysqli_connect(HOST, USER, PASS, DBNAME) or die('Error connect');
 if(isset($_POST['submit'])){
 
     if (preg_match("%[a-zA-Z]%", $_POST["user_name"])) {
+
         $message_user = strip_tags($_POST['user_message']);
-
-        function noBadWordsAllowed($data){
-            $badwords = array("asshole","bitch","fuck","motherfucker","redneck","shit","piece of shit","shithead","cunt","suck","Jew","Nazi","Hitler","loser","cancer");
-            $replacement_words = array("Bobba","Bobba","Bobba","Bobba","Bobba","Bobba","Bobba","Bobba","Bobba","Bobba");
-            $data = str_ireplace($badwords,$replacement_words,$data);
-
-            return $data;
-        }
-        $cleaned = noBadWordsAllowed($message_user);
+        $badWords = array('/fuck/', '/motherfucker/', '/shit/', '/cunt/', '/lul/', '/sukkel/', '/kut/', '/fuck/');
+        $hidingWord = '****';
+        $cleaned = preg_replace($badWords, $hidingWord, $message_user);
 
         $username = strip_tags($_POST['user_name']);
         $date = date("d-m-Y/H:m:s");
