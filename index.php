@@ -22,7 +22,7 @@
 		    </fieldset>
 <!--              <div class="links">-->
               <strong><h4>Ga <a href="comments.php">hier</a> naar de comments!</h4></strong>
-              <button onclick="alert('asshole,bitch,fuck,motherfucker,redneck,shit,piece of shit,shithead,cunt,suck,Jew,Nazi,Hitler,loser,cancer')">Lijst van verboden woorden</button>
+              <button onclick="alert('fuck,motherfucker,shit,cunt,lul,sukkel,kut,fack')">Lijst van verboden woorden</button>
 <!--              </div>-->
 		  </form>
 		</div>
@@ -39,7 +39,7 @@ if(isset($_POST['submit'])){
     if (preg_match("%[a-zA-Z]%", $_POST["user_name"])) {
 
         $message_user = strip_tags($_POST['user_message']);
-        $badWords = array('/fuck/', '/motherfucker/', '/shit/', '/cunt/', '/lul/', '/sukkel/', '/kut/', '/fuck/');
+        $badWords = array('/fuck/', '/motherfucker/', '/shit/', '/cunt/', '/lul/', '/sukkel/', '/kut/', '/fack/');
         $hidingWord = '****';
         $cleaned = preg_replace($badWords, $hidingWord, $message_user);
 
